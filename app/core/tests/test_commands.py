@@ -1,4 +1,4 @@
-"""Tests for the Django admin commands."""
+"""Tests for the Django commands."""
 from unittest.mock import patch
 
 from psycopg2 import OperationalError as Psycopg2Error
