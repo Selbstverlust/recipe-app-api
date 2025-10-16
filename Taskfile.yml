@@ -1,0 +1,29 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  docker-build:
+    cmds:
+      - docker compose build
+    silent: true
+  docker-start:
+    cmds:
+      - docker compose up -d
+    silent: true
+  docker-stop:
+    cmds:
+      - docker compose down
+    silent: true
+
+  python-test:
+    cmds:
+      - docker compose run --rm app sh -c "python manage.py test"
+    silent: true
+  python-lint:
+    cmds:
+      - docker compose run --rm app sh -c "flake8"
+    silent: true
